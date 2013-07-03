@@ -21,6 +21,14 @@ caption, th, td {text-align:left;font-weight:normal;float:none !important;}
 table, th, td {vertical-align:middle;}
 blockquote:before, blockquote:after, q:before, q:after {content:'';}
 blockquote, q {quotes:"" "";}
+a:focus, a:hover {
+color: #09f;
+}
+
+a {
+color: #06c;
+text-decoration: underline;
+}
 a img {border:none;}
 :focus {outline:0;}
 
@@ -40,10 +48,11 @@ p {margin:0 0 1.5em;}
 p .left {margin:1.5em 1.5em 1.5em 0;padding:0;}
 .right {float:right !important;}
 p .right {margin:1.5em 0 1.5em 1.5em;padding:0;}
-a:focus, a:hover {
+
+.box a:focus, .box a:hover {
 color: #666;
 }
-a {
+.box a {
 text-decoration: underline;
 color: #000;
 cursor: pointer;
@@ -272,3 +281,78 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
+
+.product-list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+float: left;
+}
+.product-list li {
+margin-bottom: 15px;
+display: block;
+padding: 15px;
+float: left;
+margin-right: 10px;
+width: 180px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+.product-list img {
+margin: 0 0 14px 0;
+}
+.product-list li a.itemtitle {
+float: left;
+width: 180px;
+text-align: center;
+font-size: 14px;
+line-height: 14px;
+height: 18px;
+margin-bottom: 5px;
+overflow: hidden;
+}
+
+
+.product-list li .price {
+color: #FF6600;
+float: right;
+font-size: 16px;
+font-weight: bold;
+text-align: right;
+width: 70px;
+margin: 5px 0 0 0;
+}
+button:hover, a.button:hover {
+background-color: #dff4ff;
+border: 1px solid #c2e1ef;
+color: #336699;
+}
+a.button:active {
+background-color: #6299c5;
+border: 1px solid #6299c5;
+color: #fff;
+}
+
+
+a.button, button {
+display: block;
+float: left;
+margin: 0.7em 0.5em 0.7em 0;
+padding: 5px 10px 5px 7px;
+border: 1px solid #dedede;
+border-top: 1px solid #eee;
+border-left: 1px solid #eee;
+background-color: #f5f5f5;
+font-size: 100%;
+line-height: 130%;
+text-decoration: none;
+font-weight: bold;
+color: #565656;
+cursor: pointer;
+}
+
+
+
+
+
+

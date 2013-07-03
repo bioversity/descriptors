@@ -2,16 +2,53 @@
     <head>
         <title>Converting PDF descriptors of Bioversity International into machine-readable format</title>
         <link href="style.css" media="all" rel="stylesheet" type="text/css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="descriptors.js"></script>
+        <script src="scraper.js"></script>
+        <script>
+        $(function() {
+            scraperUrl = 'https://script.google.com/macros/s/AKfycbzxciv3O-4tIrS3J3dSlGtd5NRCaxowos__Vsu3j6q2qzX3EO94/exec';
+            all = 'http://www.bioversityinternational.org/index.php?id=4325';
+            base = 'http://www.bioversityinternational.org/';
+
+            descriptors.getAll();
+        });
+        </script>
     </head>
 <body>
     <div class="container">
         <div class="box">
-        PGR Descriptors
-        
-        <div style="float: right; text-align: right;">
-            To make changes to this site, submit a pull-request: <a href="https://github.com/bioversity/descriptors">GitHub</a>
-      </div>
+            <a href="/">Home</a>
+            
+            <div style="float: right; text-align: right;">
+                To make changes to this site, submit a pull-request: <a href="https://github.com/bioversity/descriptors">GitHub</a>
+            </div>
+        </div>
 
+        <hr class="space">
+        <hr class="space">
+        <h1 style="text-align:center;">PGR Descriptors</h1>
+        <hr class="space">
+
+<ul class="product-list">
+    <li class="simpleCart_shelfItem descriptor" style="display: none;">
+        <a href="#">
+            <img width="180px" height="256px" style="width:180px;height:256px;" alt="Browse" />
+        </a>
+      <a class="item_name itemtitle truncated" href="javascript:;" name="item1">iPhone 3GS</a>
+      <span class="item_add">
+        
+        <span style="">
+          <a class="item_addtocart button pdf" href="javascript:;" style="display: none;margin: 0px;">View PDF</a>
+        </span>  
+      </span>
+      <span class="item_price price">$70.00</span>
+      
+    </li>
+</ul>
+        
+
+<textarea class="dump"></textarea>
     </div>
 
 </body>
