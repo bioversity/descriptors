@@ -27,7 +27,7 @@ var descriptors = {
             title: $.trim(cont.find('h2:first').text()),
             subtitle: $.trim(cont.find('span:first').text()),
 
-            image: base + cont.find('#tablePub tr:first td:first img').attr('src'),
+            image: base + cont.find('#tablePub tr:first td:first img').attr('src')
         };
 
         var $pdescs = desc.children('p');
