@@ -3,15 +3,19 @@
         <title>Converting PDF descriptors of Bioversity International into machine-readable format</title>
         <link href="style.css" media="all" rel="stylesheet" type="text/css" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="dump.js"></script>
+
         <script src="descriptors.js"></script>
         <script src="scraper.js"></script>
         <script>
         $(function() {
-            scraperUrl = 'https://script.google.com/macros/s/AKfycbzxciv3O-4tIrS3J3dSlGtd5NRCaxowos__Vsu3j6q2qzX3EO94/exec';
+            //scraperUrl = 'https://script.google.com/macros/s/AKfycbzxciv3O-4tIrS3J3dSlGtd5NRCaxowos__Vsu3j6q2qzX3EO94/exec';
+            scraperUrl = 'http://127.0.0.1:8001/';
             all = 'http://www.bioversityinternational.org/index.php?id=4325';
             base = 'http://www.bioversityinternational.org/';
 
-            descriptors.getAll();
+            descriptors.load();
+            //descriptors.getAll();
         });
         </script>
     </head>
@@ -32,14 +36,14 @@
 
 <ul class="product-list">
     <li class="simpleCart_shelfItem descriptor" style="display: none;">
-        <a href="#">
+        <a target="_blank" href="#" class='url'>
             <img width="180px" height="256px" style="width:180px;height:256px;" alt="Browse" />
         </a>
-      <a class="item_name itemtitle truncated" href="javascript:;" name="item1">iPhone 3GS</a>
+      <a class="item_name itemtitle truncated" href="javascript:;" target="_blank" name="item1">iPhone 3GS</a>
       <span class="item_add">
         
         <span style="">
-          <a class="item_addtocart button pdf" href="javascript:;" style="display: none;margin: 0px;">View PDF</a>
+          <a class="item_addtocart button pdf" href="javascript:;" style="display: none;margin: 0px;" target="_blank">View PDF</a>
         </span>  
       </span>
       <span class="item_price price">$70.00</span>
@@ -48,7 +52,7 @@
 </ul>
         
 
-<textarea class="dump"></textarea>
+<textarea class="dump" style="display: none"></textarea>
     </div>
 
 </body>

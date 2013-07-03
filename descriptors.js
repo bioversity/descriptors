@@ -7,21 +7,23 @@ var descriptors = {
 
         $descriptor.find('img').attr('src', publication.image);
         $descriptor.find('[name=item1]').text(publication.title || publication.subtitle);
+        $descriptor.find('.url').attr('href', publication.url);
         if(publication.pdf) {
             $pdf = $descriptor.find('.pdf');
             $pdf.show();
             $pdf.attr('href', publication.pdf);
         }
-        $descriptor.find('.price').text(publication.pages);
+        $descriptor.find('.price').text(publication.publication_year || publication.pages);
 
         $('.product-list').append($descriptor);
 
     },
-    getPublicaton: function($html) {
+    getPublicaton: function(url, $html) {
         var cont = $html.find('.user-bioversitypublications-pi1');
         var desc = cont.find('.descTD');
 
         var publication = {
+            url: url,
             title: $.trim(cont.find('h2:first').text()),
             subtitle: $.trim(cont.find('span:first').text()),
 
@@ -66,7 +68,9 @@ var descriptors = {
         //this.loadPublication(publication);
         this.allPubs.push(publication);
 
-        $('textarea.dump').val(JSON.stringify(this.allPubs, null, 2));
+        $dump = $('textarea.dump');
+        $dump.show();
+        $dump.val(JSON.stringify(this.allPubs, null, 2));
     },
 
     getUrls: function($html) {
@@ -78,18 +82,25 @@ var descriptors = {
 
             // load this url
             scraper.get(url, function($html) {
-                descriptors.getPublicaton($html);
+                descriptors.getPublicaton(url, $html);
             });
         });
     },
 
+    load: function() {
+        for(var i=0; i<dump.length; i++) {
+            descriptors.loadPublication(dump[i]);
+        }
+    },
     getAll: function() {
         function descLoad(counter) {
             scraper.get(all + '&page=' + counter, function($html) {
                 descriptors.getUrls($html);
 
+                var found = $html.html().match('No publications found')
+
                 // get second page only if this page doesn't show 
-                if(!$html.html().match('No publications found').length) {  //continue to next page
+                if(!found) {  //continue to next page
                     descLoad(counter + 1); 
                 }
             });
