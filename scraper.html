@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Converting PDF descriptors of Bioversity International into machine-readable format</title>
+        <link href="style.css" media="all" rel="stylesheet" type="text/css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="descriptors.js"></script>
+        <script src="scraper.js"></script>
+        <script>
+        $(function() {
+            //scraperUrl = 'https://script.google.com/macros/s/AKfycbzxciv3O-4tIrS3J3dSlGtd5NRCaxowos__Vsu3j6q2qzX3EO94/exec';
+            scraperUrl = 'http://127.0.0.1:8001/';
+            all = 'http://www.bioversityinternational.org/index.php?id=4325';
+            base = 'http://www.bioversityinternational.org/';
+
+            descriptors.getAll();
+        });
+        </script>
+    </head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div style="float: right; text-align: right;">
+                To make changes to this site, submit a pull-request: <a href="https://github.com/bioversity/descriptors">GitHub</a>
+            </div>
+            Scraper
+            
+        </div>
+
+        <hr class="space">
+        <hr class="space">
+        <h1 style="text-align:center;">scraper</h1>
+        <hr class="space">
+
+
+<textarea class="dump"></textarea>
+    </div>
+
+</body>
+</html>

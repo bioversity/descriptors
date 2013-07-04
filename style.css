@@ -350,6 +350,9 @@ font-weight: bold;
 color: #565656;
 cursor: pointer;
 }
+.search {
+    text-align: left;
+}
 
 
 

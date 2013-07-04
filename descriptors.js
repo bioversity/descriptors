@@ -6,7 +6,7 @@ var descriptors = {
         $descriptor.show();
 
         $descriptor.find('img').attr('src', publication.image);
-        $descriptor.find('[name=item1]').text(publication.title || publication.subtitle);
+        $descriptor.find('[name=item1]').attr('href', publication.url).text(publication.title || publication.subtitle);
         $descriptor.find('.url').attr('href', publication.url);
         if(publication.pdf) {
             $pdf = $descriptor.find('.pdf');
@@ -33,10 +33,11 @@ var descriptors = {
         var $pdescs = desc.children('p');
 
         var firstP = $.trim($pdescs.eq(0).text());
-        if(firstP) { // there's a PDF
+        // description
+        if(firstP) { 
             publication.description = $.trim($pdescs.eq(2).text());
 
-        } else { // no PDF
+        } else { 
             // description it's at index 1
             publication.description = $.trim($pdescs.eq(1).text());
         }
@@ -48,24 +49,34 @@ var descriptors = {
             publication.pdf = base + $child.eq(0).attr('href');
         }
 
-        // now get second last P
-        var $secondLastP = $pdescs.eq($pdescs.length - 2);
-        // all B's are keys
-        $secondLastP.find('b').each(function(idx, elem) {
+        // bottom properties
+        // get all bolds in desc TD
+        var $bolds = $('.descTD b, .descTD p[style="font-weight:bold;"]');
+
+        $bolds.each(function(idx, elem) {
             var $elem = $(elem);
             var text = $elem.text();
             text = text.toLowerCase();
             text = text.replace(':', '');
-            text = text.replace(' ', '_');
+            text = text.replace(/ /g, '_');
             text = $.trim(text);
 
             if(text) {
-                publication[text] = $.trim($($elem.get(0).nextSibling).text());
+                // check whether it's empty or not
+                var $next = $($elem.get(0).nextSibling);
+                var value = $.trim($next.text());
+
+                if(value) {
+                    publication[text] = value;
+                }
             }
         });
 
 
-        //this.loadPublication(publication);
+        // RAW HTML
+        publication.descriptionHTML = $.trim($('.descTD').html());
+
+
         this.allPubs.push(publication);
 
         $dump = $('textarea.dump');
@@ -87,9 +98,18 @@ var descriptors = {
         });
     },
 
-    load: function() {
+    load: function(searchTerm) {
+        $('.product-list').html('');
         for(var i=0; i<dump.length; i++) {
-            descriptors.loadPublication(dump[i]);
+            var pub = dump[i];
+            if(searchTerm) {
+                var jsonPub = JSON.stringify(pub);
+                if(jsonPub.search(new RegExp(searchTerm, "i")) !== -1) { // found it!
+                    descriptors.loadPublication(pub);
+                }
+            } else {
+                descriptors.loadPublication(pub);
+            }
         }
     },
     getAll: function() {

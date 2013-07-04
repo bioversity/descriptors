@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Converting PDF descriptors of Bioversity International into machine-readable format</title>
+        <title>Crop data standards</title>
         <link href="style.css" media="all" rel="stylesheet" type="text/css" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="dump.js"></script>
@@ -15,7 +15,13 @@
             base = 'http://www.bioversityinternational.org/';
 
             descriptors.load();
-            //descriptors.getAll();
+
+            // search
+            $('.search input').keyup(function(e) {
+                if(e.keyCode == 13) {
+                    descriptors.load($(this).val());
+                }
+            });
         });
         </script>
     </head>
@@ -25,16 +31,20 @@
             <div style="float: right; text-align: right;">
                 To make changes to this site, submit a pull-request: <a href="https://github.com/bioversity/descriptors">GitHub</a>
             </div>
-            <a href="/">Home</a>
+            Download as: <a href="#">JSON-LD</a>, <a href="#">RDF/XML</a>, <a href="#">N-Triples</a>
             
         </div>
 
         <hr class="space">
         <hr class="space">
-        <h1 style="text-align:center;">PGR Descriptors</h1>
+        <h1 style="text-align:center;">Crop data standards</h1>
         <hr class="space">
 
+        <div class="search"><input type="text" placeholder="search..."/></div>
 <ul class="product-list">
+</ul>
+        
+
     <li class="simpleCart_shelfItem descriptor" style="display: none;">
         <a target="_blank" href="#" class='url'>
             <img width="180px" height="256px" style="width:180px;height:256px;" alt="Browse" />
@@ -49,8 +59,6 @@
       <span class="item_price price">0</span>
       
     </li>
-</ul>
-        
 
 <textarea class="dump" style="display: none"></textarea>
     </div>
