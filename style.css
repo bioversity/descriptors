@@ -322,12 +322,15 @@ text-align: right;
 width: 70px;
 margin: 5px 0 0 0;
 }
+.right {
+float: right;
+}
 button:hover, a.button:hover {
 background-color: #dff4ff;
 border: 1px solid #c2e1ef;
 color: #336699;
 }
-a.button:active {
+a.button:active, a.button.selected {
 background-color: #6299c5;
 border: 1px solid #6299c5;
 color: #fff;
@@ -353,9 +356,20 @@ cursor: pointer;
 .search {
     text-align: left;
 }
-
-
-
-
-
-
+/* Positive */
+body .positive {
+  color:#529214;
+  background-color:#E6EFC2;
+  border:1px solid #C6D880;
+  color:#529214;
+}
+a.positive:hover, button.positive:hover {
+  background-color:#E6EFC2;
+  border:1px solid #C6D880;
+  color:#529214;
+}
+a.positive:active {
+  background-color:#529214;
+  border:1px solid #529214;
+  color:#fff;
+}

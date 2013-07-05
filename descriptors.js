@@ -1,5 +1,23 @@
 var descriptors = {
     allPubs: [],
+    assignEvents: function($descriptor) {
+        var json = JSON.stringify($.data($descriptor, "json"), null, 2);
+
+        $descriptor.find('.json').click(function() {
+            var $this = $(this);
+            if($this.hasClass('selected')) {
+                $descriptor.find('.url').show();
+                $descriptor.find('textarea').hide();
+                $this.removeClass('selected');
+
+            } else {
+
+                $descriptor.find('.url').hide();
+                $descriptor.find('textarea').show().val(json);
+                $this.addClass('selected');
+            }
+        });
+    },
     loadPublication: function(publication) {
         var $descriptor = $('.descriptor').clone();
         $descriptor.removeClass('descriptor');
@@ -8,15 +26,20 @@ var descriptors = {
         $descriptor.find('img').attr('src', publication.image);
         $descriptor.find('[name=item1]').attr('href', publication.url).text(publication.title || publication.subtitle);
         $descriptor.find('.url').attr('href', publication.url);
+        /*
         if(publication.pdf) {
             $pdf = $descriptor.find('.pdf');
             $pdf.show();
             $pdf.attr('href', publication.pdf);
         }
-        $descriptor.find('.price').text(publication.publication_year || publication.pages);
+        */
+        //$descriptor.find('.price').text(publication.publication_year || publication.pages);
+
+        $.data($descriptor, 'json', publication);
 
         $('.product-list').append($descriptor);
 
+        this.assignEvents($descriptor);
     },
     getPublicaton: function(url, $html) {
         var cont = $html.find('.user-bioversitypublications-pi1');

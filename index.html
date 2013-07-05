@@ -25,6 +25,8 @@
             $('.search input').keyup(function(e) {
                 descriptors.load($(this).val());
             });
+
+
         });
         </script>
     </head>
@@ -50,17 +52,21 @@
         
 
     <li class="simpleCart_shelfItem descriptor" style="display: none;">
+        <textarea style="display:none; width: 180px;height: 259px;"></textarea>
         <a target="_blank" href="#" class='url'>
             <img width="180px" height="256px" style="width:180px;height:256px;" alt="Browse" />
         </a>
       <a class="item_name itemtitle truncated" href="javascript:;" target="_blank" name="item1">iPhone 3GS</a>
+        <hr class="space" />
+      <span class="item_price right">
+        <a href="javascript:;" class="button positive" style="margin:0;">Parse</a>
+      </span>
       <span class="item_add">
         
         <span style="">
-          <a class="item_addtocart button pdf" href="javascript:;" style="display: none;margin: 0px;" target="_blank">View PDF</a>
+          <a class="item_addtocart button json" href="javascript:;" style="margin: 0px;" target="_blank">View JSON</a>
         </span>  
       </span>
-      <span class="item_price price">0</span>
       
     </li>
 
