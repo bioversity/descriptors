@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2012 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+<base href="http://www.bioversityinternational.org/" />
+<link rel="shortcut icon" href="http://www.bioversityinternational.org/fileadmin/templates/Bioversity_International/favicon.ico" type="image/x-ico; charset=binary" />
+<link rel="icon" href="http://www.bioversityinternational.org/fileadmin/templates/Bioversity_International/favicon.ico" type="image/x-ico; charset=binary" />
+<title>Bioversity International: Page not found!</title>
+<meta name="generator" content="TYPO3 4.5 CMS" />
+<meta name="title" content="Page not found!" />
+
+<link rel="stylesheet" type="text/css" href="typo3temp/stylesheet_a43b3aff4d.css?1363190214" media="all" />
+<link rel="stylesheet" type="text/css" href="fileadmin/templates/Bioversity_International/css/homepage/style.css?1371809623" media="all" />
+<link rel="stylesheet" type="text/css" href="fileadmin/templates/Bioversity_International/css/homepage/pro_dropdown_2.css?1327659180" media="all" />
+<link rel="stylesheet" type="text/css" href="fileadmin/templates/Bioversity_International/css/commenting.css?1357732204" media="all" />
+
+
+
+<script src="fileadmin/templates/Bioversity_International/js/stuHover.js?1266499908" type="text/javascript"></script>
+<script src="fileadmin/templates/Bioversity_International/js/jquery.js?1268668631" type="text/javascript"></script>
+<script src="fileadmin/templates/Bioversity_International/js/expand.js?1267538178" type="text/javascript"></script>
+<script src="fileadmin/templates/Bioversity_International/js/modal.js?1330932797" type="text/javascript"></script>
+<script src="fileadmin/templates/Bioversity_International/js/basic.js?1299230379" type="text/javascript"></script>
+<script src="typo3temp/javascript_0b12553063.js?1363190197" type="text/javascript"></script>
+
+
+<meta property="og:image" content="http://www.bioversityinternational.org/fileadmin/templates/Bioversity_International/img/biov.png" /> <meta property="og:description" content="We’re sorry.We cannot find the page you are looking for. Most likely that is because Bioversity is redeveloping its website, and we are still moving content around." /> <meta name="keywords" content="" />     <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <meta http-equiv="EXPIRES" content="Mon, 22 Jul 2002 11:12:01 GMT" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />            <!--[if IE 8]>
+             <link href="fileadmin/templates/Bioversity_International/css/homepage/ie8.css" type="text/css" rel="stylesheet" media="screen" />
+         <![endif]-->         <!--[if IE 7]>
+             <link href="fileadmin/templates/Bioversity_International/css/homepage/ie7.css" type="text/css" rel="stylesheet" media="screen" />
+         <![endif]-->         
+              <link href="fileadmin/templates/Bioversity_International/css/typography.css" rel="stylesheet" type="text/css" media="screen" />
+                       <link href="fileadmin/templates/Bioversity_International/css/printing.css" rel="stylesheet" type="text/css" media="print" />
+<style>#box5{display:none} .htmlarea-content-body table{border:1px solid #000} </style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript" src="fileadmin/templates/Bioversity_International/js/expand2.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+$(function() {
+    // --- Using the default options:
+    $("span.expand").toggler();
+    // --- Other options:
+    //$("h2.expand").toggler({method: "toggle", speed: 0});
+    //$("h2.expand").toggler({method: "toggle"});
+    //$("h2.expand").toggler({speed: "fast"});
+    //$("h2.expand").toggler({method: "fadeToggle"});
+    //$("h2.expand").toggler({method: "slideFadeToggle"});    
+    $("#content").expandAll({trigger: "span.expand", ref: "span.demo", showMethod: "slideDown", hideMethod: "slideUp", speed: 400});
+});
+//--><!]]>
+</script>
+<!--<![endif]-->
+<style>
+span.expand {
+displa:inline:
+font-size:12px;
+}
+#content{font-size:12px}
+
+p.switch{
+	display:none;
+}
+#print{display:none}
+</style>	<script type="text/javascript">
+ 	<!--
+  	var stile = "top=40, left=40, width=580, height=750, status=no, menubar=no, toolbar=no scrollbar=yes";
+     		function Popup(apri) {
+       		 window.open(apri, "", stile);
+     		}
+ 	//-->
+	</script>     <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28975890-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    <link rel="shortcut icon" href="fileadmin/templates/Bioversity_International/favicon.ico" type="image/x-icon" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/BioversityInternational-LatestNewsAndPublications" />
+</head>
+<body class="twoColFixRtHdr">
+
+  <div id="mainContainer">
+  	<div id="head_container">
+		<div id="logo"><a title="Back to home page" href="http://www.bioversityinternational.org/"><div class="printLogo"><img src="fileadmin/templates/Bioversity_International/img/biov.png" alt="" /></div></a></div>
+		<div id="aim"><a title="Back to home page" href="http://www.bioversityinternational.org/"></a></div>
+		<div id="rss"></div>
+		<div id="top_links"><ul><li><a href="nc/home.html" onfocus="blurLink(this);">Home</a></li><li><a href="databases.html" onfocus="blurLink(this);">Databases</a></li><li><a href="about_us/job_opportunities.html" onfocus="blurLink(this);">Job Opportunities</a></li><li><a href="privacy_policy_cookies.html" onfocus="blurLink(this);">Privacy Policy & Cookies</a></li><li><a href="site_map.html" onfocus="blurLink(this);">Site map</a></li></ul></div>
+		<div id="search"><div id="searchBar">
+<form id="searchbox_016697108779861396524:r7ptraptrpy" action="/free_text_search.html" method="GET" style="margin: 0px; padding: 0px;">
+<input type="hidden" name="cx" value="016697108779861396524:r7ptraptrpy" />
+<input type="hidden" name="cof" value="FORID:11" />
+<input type="hidden" name="no_cache" value="1" />
+<input type="hidden" name="id" value="1150" />
+<input type="submit" id="search_input" name="sa" value="  Search  " alt="Click here for the search" />
+<input name="q" type="text" size="15" maxlength="255" />
+</form>
+</div></div>
+	
+    </div>
+<div id="menu"><ul id="nav"><li class="top"><a href="about_us.html" onfocus="blurLink(this);" class="top_link">About Us</a><ul class="sub"><li><a href="about_us/regions.html" onfocus="blurLink(this);" class="">Regions</a></li><li><a href="about_us/supporting_us.html" onfocus="blurLink(this);" class="">Supporting Us</a></li><li><a href="about_us/partners.html" onfocus="blurLink(this);" class="">Partners</a></li><li><a href="about_us/research_grants_2010.html" onfocus="blurLink(this);" class="">Research Grants 2010</a></li><li><a href="about_us/governance.html" onfocus="blurLink(this);" class="">Governance</a></li><li><a href="about_us/newsroom.html" onfocus="blurLink(this);" class="">Newsroom</a></li><li><a href="about_us/contact_us.html" onfocus="blurLink(this);" class="">Contact Us</a></li><li><a href="about_us/job_opportunities.html" onfocus="blurLink(this);" class="">Job Opportunities</a></li></ul></li><li class="top"><a href="research.html" onfocus="blurLink(this);" class="top_link">Research</a><ul class="sub"><li><a href="research/nutrition.html" onfocus="blurLink(this);" class="">Nutrition</a></li><li><a href="research/sustainable_agriculture.html" onfocus="blurLink(this);" class="">Sustainable agriculture</a></li><li><a href="research/conservation.html" onfocus="blurLink(this);" class="">Conservation</a></li><li><a href="research/policy_law.html" onfocus="blurLink(this);" class="">Policy & Law</a></li><li><a href="research/cgiar_research_programs.html" onfocus="blurLink(this);" class="">CGIAR Research Programs</a></li></ul></li><li class="top"><a href="impact.html" onfocus="blurLink(this);" class="top_link">Impact</a><ul class="sub"><li><a href="impact/conducting_impact_assessment.html" onfocus="blurLink(this);" class="">Conducting Impact Assessment</a></li><li><a href="impact/operational_challenges.html" onfocus="blurLink(this);" class="">Operational challenges</a></li><li><a href="impact/scientific_challenges.html" onfocus="blurLink(this);" class="">Scientific challenges</a></li></ul></li><li class="top"><a href="publications.html" onfocus="blurLink(this);" class="top_link">Publications</a><ul class="sub"><li><a href="nc/publications/latest.html" onfocus="blurLink(this);" class="">Latest</a></li><li><a href="publications/search.html" onfocus="blurLink(this);" class="">Search</a></li><li><a href="publications/library_services.html" onfocus="blurLink(this);" class="">Library Services</a></li><li><a href="publications/issues_on_agricultural_biodiversity_earthscan_series.html" onfocus="blurLink(this);" class="">Issues on Agricultural Biodiversity - Earthscan series</a></li></ul></li><li class="top"><a href="training.html" onfocus="blurLink(this);" class="top_link">Training</a><ul class="sub"><li><a href="training/upcoming_training_events.html" onfocus="blurLink(this);" class="">Upcoming training events</a></li><li><a href="training/training_materials.html" onfocus="blurLink(this);" class="">Training Materials</a></li><li><a href="training/research_fellowships.html" onfocus="blurLink(this);" class="">Research Fellowships</a></li><li><a href="training/internships.html" onfocus="blurLink(this);" class="">Internships</a></li><li><a href="training/agrobiodiversity_education.html" onfocus="blurLink(this);" class="">Agrobiodiversity Education</a></li></ul></li></ul><div id="donate"> <a onclick="_gaq.push(['_trackPageview', 'donate.html?button=headerTopDonateButton']);" href="https://www.bioversityinternational.org/donate.html">MAKE A DONATION</a></div></div>
+  <div id="container_table">
+  <div class="tabella">
+  
+		<div id="top"></div>
+		<div class="riga">
+			<div class="colonna1"></div>
+			<div class="colonna2"></div>
+			<div class="colonna3"></div> 
+		</div>
+		<div id="shadow_box"></div>
+</div>
+</div>
+
+<div id="container">
+		<div id="sidebar1">
+		<div id="sidebar_content">
+			<div id="box_4">
+	
+						
+											
+						<div id="box_4"></div>
+					
+						
+					</div>
+			<div id="box1"><div class="titleBar"><h3>Research Areas</h3></div>
+	<!--  CONTENT ELEMENT, uid:11222/html [begin] -->
+		
+		<!--  Raw HTML content: [begin] -->
+			<a id="c11222"></a><div class="sid_box1">
+		<!--  Raw HTML content: [end] -->
+			
+	<!--  CONTENT ELEMENT, uid:11222/html [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:11224/text [begin] -->
+		<div id="c11224" class="csc-default">
+		<!--  Text: [begin] -->
+			<p><a href="research/sustainable_agriculture.html" target="_self" class="internal-link"><img src="fileadmin/templates/Bioversity_International/img/homepage/sustainable_agriculture.png" align="left" alt="" /> </a></p>
+<h3><a href="research/sustainable_agriculture.html" target="_self" class="internal-link">Sustainable Agriculture</a></h3>
+		<!--  Text: [end] -->
+			</div>
+	<!--  CONTENT ELEMENT, uid:11224/text [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:11276/html [begin] -->
+		
+		<!--  Raw HTML content: [begin] -->
+			<a id="c11276"></a></div><div style="clear: both;"></div><div class="sid_box2">
+		<!--  Raw HTML content: [end] -->
+			
+	<!--  CONTENT ELEMENT, uid:11276/html [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:11278/text [begin] -->
+		<div id="c11278" class="csc-default">
+		<!--  Text: [begin] -->
+			<p><a href="research/nutrition.html" target="_self" class="internal-link"><img src="fileadmin/templates/Bioversity_International/img/homepage/nutrition.png" align="left" alt="" /> </a></p>
+<h3><a href="research/nutrition.html" target="_self" class="internal-link">Nutrition</a></h3>
+		<!--  Text: [end] -->
+			</div>
+	<!--  CONTENT ELEMENT, uid:11278/text [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:11282/html [begin] -->
+		
+		<!--  Raw HTML content: [begin] -->
+			<a id="c11282"></a></div><div style="clear: both;"></div><div class="sid_box3">
+		<!--  Raw HTML content: [end] -->
+			
+	<!--  CONTENT ELEMENT, uid:11282/html [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:11284/text [begin] -->
+		<div id="c11284" class="csc-default">
+		<!--  Text: [begin] -->
+			<p><a href="research/conservation.html" target="_self" class="internal-link"><img src="fileadmin/templates/Bioversity_International/img/homepage/conservation.png" align="left" alt="" /> </a></p>
+<h3><a href="research/conservation.html" target="_self" class="internal-link">Conservation</a></h3>
+		<!--  Text: [end] -->
+			</div>
+	<!--  CONTENT ELEMENT, uid:11284/text [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:11286/html [begin] -->
+		
+		<!--  Raw HTML content: [begin] -->
+			<a id="c11286"></a></div><div style="clear: both;"></div>
+		<!--  Raw HTML content: [end] -->
+			
+	<!--  CONTENT ELEMENT, uid:11286/html [end] -->
+		</div>
+			
+			<div id="free_box"></div>
+			<div id="events_box"><div class="titleBar"><h3>Recent Publications</h3><div class="rssSmall"><a style="display:block" href="http://feeds.feedburner.com/BioversityInternational-LatestPublications" target="_blank">&nbsp;</a></div></div><div class="sid_box"><p><a href="nc/publications/publication/issue/methodologies_for_evaluating_on_farm_conservation_projects.html">Methodologies for evaluating on-farm conservation projects</a></p></div><div class="sid_box"><p><a href="nc/publications/publication/issue/guidelines_and_best_practices_for_on_farm_conservation_projects_designing_and_evaluating_interventi.html">Guidelines and best practices for on-farm conservation projects: designing and evaluating interventions</a></p></div><p class="annual"><a href="http://www.bioversityinternational.org/nc/publications/publication/issue/bioversity_international_annual_report_2011.html">Annual Report 2011</a></p><div class="read1"><a href="http://www.bioversityinternational.org/nc/publications/latest.html">[More]</a></div></div>
+			<div id="box2"><div class="titleBar"> <h3>Bioversity News</h3><div class="rssSmall"><a href="http://feeds.feedburner.com/BioversityInternational-LatestNewsAndPublications" target="_blank">&nbsp;</a></div></div><div class="news_biov"> <h4><a href="announcements/bioversity_international_at_the_fourth_world_congress_on_quinoa.html">Bioversity International at the Fourth World Congress on Quinoa</a></h4><a href="announcements/bioversity_international_at_the_fourth_world_congress_on_quinoa.html"><p>As part of events for the International Year of Quinoa, Ecuador will host the 4th World Congress on Quinoa and the First Symposium on Andean Grains from 8-12 July, 2013. Bioversity is participating in various sessions on how quinoa and Andean grains can improve the nutrition and income of Andean communities.</p></a></div><div class="news_biov"> <h4><a href="announcements/food_for_thought_on_andean_super_grains.html">Food for thought on Andean super grains</a></h4><a href="announcements/food_for_thought_on_andean_super_grains.html"><p>A new book <i>Biodiversity of Andean grains: Balancing market potential and sustainable livelihoods</i> puts the spotlight on Andean super grains: quinoa, amaranth and cañahua, highly nutritious and resistant crops which are important for the food and nutrition security of people of the Americas and the world.</p></a></div><div class="read1"><a href="http://www.bioversityinternational.org/browse_by/category/announcements/">[More]</a></div></div>
+			<div id="box3"></div>
+			<div id="box4"></div>
+			<div id="box5"></div>
+			<div id="box6"><div class="titleBar"><h3>International conferences and meetings</h3></div><div class="meet"><p style="padding-left:7px;"><a href="/around_the_world/conferences_and_meetings.html">Upcoming events </a></p></div></div>
+			<div id="box7"><div class="titleBar"><h3>Latest information from</h3></div><select id="cat" name="cat"><option selected="" value="">Select category</option><option value="announcements/">Announcements</option><option value="biographies/">Biographies</option><option value="conferences &amp; events/">Conferences & Events</option><option value="donate/">Donate</option><option value="donors/">Donors</option><option value="employment/">Employment</option><option value="press releases/">Press Releases</option><option value="research/">Research</option><option value="research/cgiar research programs/">&nbsp;&nbsp;&nbsp;CGIAR Research Programs</option><option value="research/conservation/">&nbsp;&nbsp;&nbsp;Conservation</option><option value="research/impact assessment/">&nbsp;&nbsp;&nbsp;Impact Assessment</option><option value="research/nutrition/">&nbsp;&nbsp;&nbsp;Nutrition</option><option value="research/sustainable agriculture/">&nbsp;&nbsp;&nbsp;Sustainable agriculture</option><option value="training/">Training</option></select>
+      <script type="text/javascript">
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value.length > 0 ) {
+			location.href = "http://www.bioversityinternational.org/browse_by/category/"+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script></div>
+			<div id="box8">
+	<!--  CONTENT ELEMENT, uid:11295/html [begin] -->
+		
+		<!--  Raw HTML content: [begin] -->
+			<a id="c11295"></a><div id="social"><div class="titleBar"><h3>Follow Us</h3></div>
+	  <div class="socBox">
+<table class="socTable">
+	<tr><td style="width:160px; vertical-align:top;">
+<p><a rtekeep="1" target="_blank" href="http://www.facebook.com/home.php#%21/pages/Bioversity-International/184679868223402"><img width="35" height="34" alt="" txdam="13306" src="/fileadmin/templates/Bioversity_International/img/socialIcons/facebook.png" align="left" title="Facebook" /><span>Facebook</span><br />&nbsp;
+  </a></p>	
+	<p><a rtekeep="1" target="_blank" href="http://www.youtube.com/user/Bioversityvideo"></a> <a rtekeep="1" target="_blank" href="http://www.youtube.com/user/Bioversityvideo"><img width="35" height="34" alt="" txdam="13307" src="/fileadmin/templates/Bioversity_International/img/socialIcons/youtube.png" align="left" title="Youtube" /><span>Youtube</span><br />&nbsp;</a> 
+	 </p>
+	<p>
+	<a rtekeep="1" target="_blank" href="http://www.flickr.com/photos/bioversity/"><img src="/fileadmin/templates/Bioversity_International/img/socialIcons/flickr.png" alt="" width="35" height="34" align="left" title="Flickr" txdam="13304" /><span>Flickr</span><br />&nbsp;</a>
+	 </p>
+	 </td><td style="width:160px; vertical-align:top">
+	 
+<p>	<a target="_blank" href="http://www.twitter.com/BioversityInt"><img width="35" height="34" align="left" src="https://twitter-badges.s3.amazonaws.com/t_logo-a.png" alt="Follow BioversityInt on Twitter" /><span>Twitter</span><br />&nbsp;</a>  </p>
+	 <p><a target="_blank" href="http://www.slideshare.net/BioversityInternational"><img width="35" height="34" alt="" txdam="13303" src="/fileadmin/templates/Bioversity_International/img/socialIcons/slideshare.png" align="left" title="Slideshare" /><span>Slideshare</span><br />&nbsp;</a> </p> 
+	 	<p>  <a href="index.php?id=1769#" class="activate_modal" name="modal_window2">
+	<img src="/fileadmin/templates/Bioversity_International/img/socialIcons/rssEmail2.png" alt="" width="35" height="34" align="left" title="Subscribe by Email" txdam="13304" /><span>Subscribe by Email</span><br />&nbsp;</a>
+	 <div id="mask" class="close_modal"></div>
+	 <div id="modal_window2" class="modal_window"><p>Subscribe here to get the latest update by Email. </p>
+	 <ul><li> <a class="email1" rtekeep="1" target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=BioversityInternational-LatestNewsAndPublications">Bioversity - Latest Announcements</a></li>
+	 <li><a class="email1" target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=BioversityInternational-LatestPublications&amp;loc=en_US">Bioversity International - Latest publications </a></li></ul>
+ <style>#privacy{height:63px; width:100%; overflow-y:hidden; font-size:11px;border:none;}</style>	
+<p>You can read our <b><a href="privacy_policy_and_cookies.html" target="_blank">Privacy Policy here</a></b></p>
+	 <p>Alternatively you can subscribe by RSS:<ul>
+	 <li><a class="rss1" target="_blank" href="http://feeds.feedburner.com/BioversityInternational-LatestNewsAndPublications">Bioversity - Latest Announcements</a></li>
+	 <li><a class="rss1" target="_blank" href="http://feeds.feedburner.com/BioversityInternational-LatestPublications">Bioversity - Latest Publications</a></li>
+	 </ul>
+	 </p><p id="close_modal" class="close_modal">[Close]</p></div>
+	 </p>
+</td>	 </tr>
+</table>
+	 </div>
+	 </div>
+		<!--  Raw HTML content: [end] -->
+			
+	<!--  CONTENT ELEMENT, uid:11295/html [end] -->
+		</div>
+			<div id="translator"><div class="titleBar"><h3>Translator</h3></div><div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en'
+  }, 'google_translate_element');
+}
+</script><script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script></div>
+		</div>
+	</div> 
+	
+	<div id="breadcrumbs">&nbsp;</div>
+	
+	<!--<div id="intro_h"></div>--><!--<div id="shadow_home"></div>-->
+	
+	<div id="latest_announcment"></div>
+	<h1 class="pageTitle">Page not found!</h1>
+	
+	<div id="social_container"><div id="socialSharing"><div id="print"></div></div></div>
+	<div id="mainContent">
+	<!--  CONTENT ELEMENT, uid:4558/text [begin] -->
+		<div id="c4558" class="csc-default">
+		<!--  Text: [begin] -->
+			<p>We’re sorry.<br />We cannot find the page you are looking for. <br />Most likely that is because Bioversity is redeveloping its website, and we are still moving content around.<br /></p>
+		<!--  Text: [end] -->
+			</div>
+	<!--  CONTENT ELEMENT, uid:4558/text [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:4871/html [begin] -->
+		
+		<!--  Raw HTML content: [begin] -->
+			<a id="c4871"></a><div id="content"> <div class="content"> 
+Visit the <a href="http://www.bioversityinternational.org/site_map.html">site map</a> or <span class="demo">
+      try browsing
+          <span class="expand"> ‘By Category’</span> 
+          <div class="collapse"> 
+		<!--  Raw HTML content: [end] -->
+			
+	<!--  CONTENT ELEMENT, uid:4871/html [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:6805/text [begin] -->
+		<div id="c6805" class="csc-default">
+		<!--  Text: [begin] -->
+			<ul><li><a href="browse_by/category/about%20us" target="_self">About us</a></li><li><a href="browse_by/category/databases" target="_self">Databases</a></li><li><a href="browse_by/category/news" target="_self">News</a></li><li><a href="http://www.bioversityinternational.org/browse_by/category/policy%20&amp;%20law" target="_self">Policy &amp; Law</a></li><li><a href="browse_by/category/publications" target="_self">Publications</a><ul><li><a href="browse_by/category/publications/annual%20report" target="_self">Annual Report</a></li><li><a href="browse_by/category/publications/books" target="_self">Books</a></li><li><a href="browse_by/category/publications/journal%20articles" target="_self">Journal Articles</a></li><li><a href="browse_by/category/publications/conferences" target="_self">Conferences</a></li><li><a href="browse_by/category/publications/descriptors" target="_self">Descriptors</a></li><li><a href="browse_by/category/publications/factsheets" target="_self">Factsheets</a></li><li><a href="browse_by/category/publications/series" target="_self">Series</a></li><li><a href="browse_by/category/training%20materials" target="_self">Training Materials</a></li></ul></li><li><a href="browse_by/category/research" target="_self">Research</a><ul><li><a href="browse_by/category/research/conservation" target="_self">Conservation</a></li><li><a href="browse_by/category/research/sustainable%20agriculture" target="_self">Sustainable agriculture</a></li><li><a href="browse_by/category/research/nutrition" target="_self">Nutrition</a></li><li><a href="browse_by/category/research/poverty%20alleviation" target="_self">Poverty alleviation</a></li></ul></li><li><a href="browse_by/category/training" target="_self">Training</a></li><li><a href="http://www.bioversityinternational.org/browse_by/category/conferences%20&amp;%20events" target="_self">Conferences &amp; Events</a></li><li><a href="browse_by/category/announcements" target="_self">Announcements</a></li><li><a href="browse_by/category/governance" target="_self">Governance</a></li></ul>
+		<!--  Text: [end] -->
+			</div>
+	<!--  CONTENT ELEMENT, uid:6805/text [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:6806/html [begin] -->
+		
+		<!--  Raw HTML content: [begin] -->
+			<a id="c6806"></a></span></div></div></div>
+		<!--  Raw HTML content: [end] -->
+			
+	<!--  CONTENT ELEMENT, uid:6806/html [end] -->
+		</div>
+	
+	<div class="tabella1">
+ <div class="riga1">
+ 	
+    
+ </div>
+ <div class="riga1">
+ 	
+    
+ </div>
+  <div class="riga1">
+ 	
+    
+ </div>
+
+ </div>
+	<div id="related"></div>
+	<div id="category"></div>
+	<div id="tags"></div>
+  
+	<div id="comment"></div>
+	<br class="clearfloat" />
+	<div id="white"></div>
+	<div id="footer">
+				
+		<div class="table_footer">
+			<div class="row_footer">
+				<div class="col_footer1"></div>
+				<div class="col_footer2"></div>
+				<div class="col_footer3"></div>
+			</div>
+			<div class="row_footer2"></div>
+			<div class="text_footer"><div id="links">
+	<!--  CONTENT ELEMENT, uid:4903/text [begin] -->
+		<div id="c4903" class="csc-default">
+		<!--  Text: [begin] -->
+			<p><a href="http://www.cropwildrelatives.org/" title="Crop Wild Relatives" target="_blank" class="external-link-new-window">CROP WILD RELATIVES </a>| <a href="http://eurisco.ecpgr.org/" title="EURISCO" target="_blank" class="external-link-new-window">EURISCO </a>| <a href="http://bioversitylibrary.wordpress.com/" title="The Agrobiodiversity Grapevine" target="_blank" class="external-link-new-window">THE AGROBIODIVERSITY GRAPEVINE </a>| <a href="http://www.promusa.org/" title="Promusa" target="_blank" class="external-link-new-window">PROMUSA</a>&nbsp;|&nbsp;<a href="http://agrobiodiversityplatform.org/" title="Platform for Agrobiodiversity Research (PAR)" target="_blank" class="external-link-new-window">PLATFORM FOR AGROBIODIVERSITY RESEARCH</a></p>
+		<!--  Text: [end] -->
+			</div>
+	<!--  CONTENT ELEMENT, uid:4903/text [end] -->
+		</div><!--<p>&copy; Bioversity International <br/> Bioversity Headquarters: Via dei Tre Denari, 472a 00057 Maccarese (Rome) Italy
+Tel.: (39) 066118.1 - Fax: (39) 0661979661 </p>-->
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tbody><tr>
+<td width="10%" style="color: rgb(73, 71, 71); vertical-align: bottom; padding-left: 27px;"><a href="http://www.cgiar.org/" target="_blank" title="CGIAR"><img width="140" align="left" style=" border:1px solid #ccc; border-radius:8px; margin-right:10px" src="/fileadmin/bioversityDocs/Campaigns/CGIAR_logo.png" alt="" /></a></td><td width="30%" style="vertical-align:bottom"><br />Bioversity International is a<br /> member of the CGIAR consortium</td>
+    <td width="10%" style="vertical-align: bottom;"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons Licence" style="border-width: 0pt;" src="https://creativecommons.org/images/public/somerights20.png" /></a></td>
+    <td width="50%" style="vertical-align: bottom;">This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Bioversity International</span> is licensed under a<br />
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</td>
+ 
+  
+</tr>
+</tbody></table>
+
+</center>
+</div>
+		</div>
+	</div>
+</div></div>
+
+<script type="text/javascript" src="http://www.google-analytics.com/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-215006-12";
+
+
+urchinTracker("/404.html?page=" + _udl.pathname + _udl.search);
+</script>
+
+
+
+
+</body>
+</html>

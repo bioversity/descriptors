@@ -8,7 +8,7 @@
             <script src="json2.js"></script>
         <![endif]-->
 
-        <script src="dump.js"></script>
+        <script src="pdfs.js"></script>
 
         <script src="descriptors.js"></script>
         <script src="scraper.js"></script>
@@ -19,7 +19,11 @@
             all = 'http://www.bioversityinternational.org/index.php?id=4325';
             base = 'http://www.bioversityinternational.org/';
 
-            descriptors.load();
+            $.getJSON('pdfs.json', function(data) {
+                pdfs = data;
+
+                descriptors.load();
+            });
 
             // search
             $('.search input').keyup(function(e) {

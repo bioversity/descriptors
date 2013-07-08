@@ -23,7 +23,7 @@ var descriptors = {
         $descriptor.removeClass('descriptor');
         $descriptor.show();
 
-        $descriptor.find('img').attr('src', publication.image);
+        $descriptor.find('img').attr('src', 'thumbs/'+ publication.image);
         $descriptor.find('[name=item1]').attr('href', publication.url).text(publication.title || publication.subtitle);
         $descriptor.find('.url').attr('href', publication.url);
         /*
@@ -123,8 +123,8 @@ var descriptors = {
 
     load: function(searchTerm) {
         $('.product-list').html('');
-        for(var i=0; i<dump.length; i++) {
-            var pub = dump[i];
+        for(var i=0; i<pdfs.length; i++) {
+            var pub = pdfs[i];
             if(searchTerm) {
                 var jsonPub = JSON.stringify(pub);
                 if(jsonPub.search(new RegExp(searchTerm, "i")) !== -1) { // found it!
