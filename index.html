@@ -8,9 +8,13 @@
             <script src="json2.js"></script>
         <![endif]-->
 
-        <script src="pdfs.js"></script>
+  <!-- Use latest PDF.js build from Github -->
+  <script type="text/javascript" src="pdf.js"></script>
 
         <script src="descriptors.js"></script>
+
+        <script src="mypdf.js"></script>
+
         <script src="scraper.js"></script>
         <script>
         $(function() {
@@ -35,6 +39,8 @@
         </script>
     </head>
 <body>
+<canvas id="the-canvas" style="border:1px solid black"></canvas>
+
     <div class="container">
         <div class="box">
             <div style="float: right; text-align: right;">
@@ -62,7 +68,7 @@
         </a>
       <a class="item_name itemtitle truncated" href="javascript:;" target="_blank" name="item1">iPhone 3GS</a>
         <hr class="space" />
-      <span class="item_price right">
+      <span class="item_price right parse" style="display: none">
         <a href="javascript:;" class="button positive" style="margin:0;">Parse</a>
       </span>
       <span class="item_add">

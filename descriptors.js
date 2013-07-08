@@ -1,7 +1,12 @@
 var descriptors = {
     allPubs: [],
     assignEvents: function($descriptor) {
-        var json = JSON.stringify($.data($descriptor, "json"), null, 2);
+        var obj = $.data($descriptor, "json");
+        var json = JSON.stringify(obj, null, 2);
+
+        $descriptor.find('.parse').click(function() {
+            mypdf.load('pdfs/' + obj.pdf)
+        });
 
         $descriptor.find('.json').click(function() {
             var $this = $(this);
@@ -26,13 +31,10 @@ var descriptors = {
         $descriptor.find('img').attr('src', 'thumbs/'+ publication.image);
         $descriptor.find('[name=item1]').attr('href', publication.url).text(publication.title || publication.subtitle);
         $descriptor.find('.url').attr('href', publication.url);
-        /*
         if(publication.pdf) {
-            $pdf = $descriptor.find('.pdf');
+            $pdf = $descriptor.find('.parse');
             $pdf.show();
-            $pdf.attr('href', publication.pdf);
         }
-        */
         //$descriptor.find('.price').text(publication.publication_year || publication.pages);
 
         $.data($descriptor, 'json', publication);
