@@ -1,26 +1,37 @@
 var descriptors = {
     allPubs: [],
+    showTextarea: function($elem, $descriptor, val) {
+        if($elem.hasClass('selected')) {
+            $descriptor.find('.url').show();
+            $descriptor.find('textarea').hide();
+
+            $elem.removeClass('selected');
+
+        } else {
+
+            $descriptor.find('.url').hide();
+            $descriptor.find('textarea').show().val(val);
+
+            $elem.addClass('selected');
+        }
+    },
     assignEvents: function($descriptor) {
         var obj = $.data($descriptor, "json");
         var json = JSON.stringify(obj, null, 2);
 
-        $descriptor.find('.parse').click(function() {
-            mypdf.load('pdfs/' + obj.pdf)
+        $descriptor.find('.parse a').click(function() {
+            var $this = $(this);
+
+            $this.text('Parsing...')
+
+            mypdf.load('pdfs/' + obj.pdf, function(text) {
+                descriptors.showTextarea($this, $descriptor, text);
+                $this.text('Parse')
+            })
         });
 
         $descriptor.find('.json').click(function() {
-            var $this = $(this);
-            if($this.hasClass('selected')) {
-                $descriptor.find('.url').show();
-                $descriptor.find('textarea').hide();
-                $this.removeClass('selected');
-
-            } else {
-
-                $descriptor.find('.url').hide();
-                $descriptor.find('textarea').show().val(json);
-                $this.addClass('selected');
-            }
+            descriptors.showTextarea($(this), $descriptor, json);
         });
     },
     loadPublication: function(publication) {

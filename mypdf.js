@@ -4,32 +4,44 @@ var mypdf = (function mypdf() {
     PDFJS.disableWorker = true;
 
 
-    self.load = function(url) {
+    self.load = function(url, callback) {
         PDFJS.getDocument(url).then(function getPdfHelloWorld(pdf) {
-          //
-          // Fetch the first page
-          //
-          pdf.getPage(10).then(function getPageHelloWorld(page) {
-            var scale = 1.5;
-            var viewport = page.getViewport(scale);
+          var numPages = pdf.numPages;
+          var allText = '';
 
-            page.getTextContent().then(function (text) {
-                var extractedString = $.makeArray($(text.bidiTexts).map(function(element,value){return value.str})).join(' '); 
-                console.log(extractedString);
+          for(var i=0; i<= numPages; i++) {
+            (function(i) {
+              pdf.getPage(i).then(function getPageHelloWorld(page) {
+                var scale = 1.5;
+                var viewport = page.getViewport(scale);
 
-                var canvas = document.getElementById('the-canvas');
-                var context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
+                page.getTextContent().then(function (text) {
+                    var extractedString = $.makeArray($(text.bidiTexts).map(function(element,value){return value.str})).join(' '); 
 
-                var renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                };
+                    allText += extractedString;
 
-                page.render(renderContext);
-            });
-          });
+                    if(i == numPages) { // last
+                        callback(allText);
+                    }
+
+                    /*
+                    var canvas = document.getElementById('the-canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+
+                    page.render(renderContext);
+                    */
+                });
+              });
+
+            })(i); // i
+          }
         });
     };
 
