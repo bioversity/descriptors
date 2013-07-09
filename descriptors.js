@@ -25,7 +25,10 @@ var descriptors = {
             $this.text('Parsing...')
 
             mypdf.load('pdfs/' + obj.pdf, function(text) {
-                descriptors.showTextarea($this, $descriptor, text);
+                // woo extract regex!
+                var arr = text.match(/[\d]+\.[\d]+\.[\d]+          [\w \/]+/g);
+                var str = arr.map(function(d) { return $.trim(d).replace(/ +(?= )/g, ''); }).join('\n')
+                descriptors.showTextarea($this, $descriptor, str);
                 $this.text('Parse')
             })
         });
