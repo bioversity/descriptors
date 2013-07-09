@@ -29,10 +29,7 @@ var descriptors = {
                 // woo extract regex!
                 var space1 = '      ';
                 var space2 = '         '; 
-                var arr = text.match(/[\d]+\.[\d]+\.[\d]+      [\w \/]+/g);
-                if(!arr) {
-                    var arr = text.match(/[\d]+\.[\d]+\.[\d]+         [\w \/]+/g);
-                }
+                var arr = text.match(/[\d]+\.[\d]+\.[\d]+[ ]+[^\(\)\d\.]+/g);
                 str = 'couldn\'t match regex';
                 if(arr) {
                     str = arr.map(function(d) { return $.trim(d).replace(/ +(?= )/g, ''); }).join('\n')
