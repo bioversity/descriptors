@@ -29,10 +29,23 @@ var descriptors = {
                 // woo extract regex!
                 var space1 = '      ';
                 var space2 = '         '; 
-                var arr = text.match(/[\d]+\.[\d]+\.[\d]+[ ]+[^\(\)\d\.]+/g);
+                var arr = text.match(/[\d]+\.([\d]+)?(\.[\d]+)?[ ]+[^\(\)\d\.]+/g);
+                //var arr = text.match(/[\d]+\.([\d]+)?(\.[\d]+)?[ ]+[A-Z][a-z ]+/g);
+                //var arr = text.match(/\d[.\d]+\s+[A-Z][^A-Z]+(?!\S)/g);
                 str = 'couldn\'t match regex';
                 if(arr) {
-                    str = arr.map(function(d) { return $.trim(d).replace(/ +(?= )/g, ''); }).join('\n')
+                    str = arr.map(function(d) { 
+                        var s = $.trim(d).replace(/ +(?= )/g, '');
+                        var digits = s.match(/[\d]+/g);
+                        var spaces = 0;
+                        if(digits) {
+                            spaces = digits.length - 1;
+                        }
+                        for(var i=0; i<spaces; i++) {
+                            s = '  ' + s;
+                        }
+                        return s;
+                    }).join('\n');
                 }
                 descriptors.showTextarea($this, $descriptor, str);
                 $this.text('Parse')
