@@ -1,0 +1,1097 @@
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1138.51">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 12.0px 0.0px; font: 15.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 13.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 13.0px Palatino}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
+    p.p6 {margin: 0.0px 0.0px 12.0px 0.0px; font: 11.0px Helvetica}
+    p.p7 {margin: 0.0px 0.0px 12.0px 0.0px; font: 19.0px Times}
+    p.p8 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Helvetica}
+    li.li2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 13.0px Helvetica}
+    li.li3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 13.0px Palatino}
+    span.s1 {font: 19.0px Times}
+    span.s2 {font: 19.0px Times; vertical-align: -1.0px}
+    span.s3 {font: 13.0px Palatino}
+    span.s4 {font: 11.0px Helvetica}
+    span.s5 {font: 12.0px Times}
+    span.s6 {font: 12.0px Helvetica}
+    span.s7 {font: 13.0px Helvetica}
+    span.s8 {font: 13.0px Symbol}
+    span.s9 {font: 13.0px 'Lucida Grande'}
+    ul.ul1 {list-style-type: none}
+  </style>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+function camelize(str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+    return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+  }).replace(/\s+/g, '');
+}
+function trim(str) {
+  return String(str).replace(/^\s+|\s+$/g, '');
+};
+function removeWeirdChars(str) {
+    return str.replace(/\//g, ' ');
+}
+$(function() {
+
+var baseUri = 'http://purl.org/agrobiodiversity/vocab#';
+
+var notAllowed = {
+    notes: true,
+    fruit: true,
+    to: true,
+    bract: true,
+    plantDescriptors: true,
+    plantGeneralAppearance: true,
+    pseudostemSuckers: true,
+    petioleMidribLeaf: true,
+    maleFlower: true
+};
+
+var triples = '';
+
+var regex = /[\d]+\.([\d]+)?(\.[\d]+)?[ ]+[^\(\)\d\.]+/g;
+$('b').each(function() { 
+    var arr = $(this).text().match(regex);
+    if(arr && arr.length) {
+        var m = arr[0].replace(/[\d]+\.([\d]+)?(\.[\d]+)?/g, '');
+        m = trim(m);
+        var originalLabel = m;
+        m = removeWeirdChars(m);
+        m = camelize(m);
+        if(notAllowed[m]) return;
+
+        // triple!
+        triples += '<' + baseUri + m + '> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .\n';
+        triples += '<' + baseUri + m + '> <http://www.w3.org/2000/01/rdf-schema#label> ' + JSON.stringify(originalLabel) + ' .\n';
+    }
+})
+console.log(triples);
+
+});
+
+</script>
+</head>
+<body>
+<p class="p1"><b>6. Plant descriptors</b></p>
+<p class="p2"><b>6.1 Plant general appearance</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s1"></span><span class="s2">« &nbsp;</span><b>6.1.1 Leaf habit </b><span class="s3">(See Fig. 3)<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Erect<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;Intermediate<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">3 &nbsp;Drooping<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">4 &nbsp;Other (e.g. very drooping, specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+  </ul>
+  <li class="li3"><span class="s4">123 </span><span class="s5"><br>
+</span><b>Fig. 3 Leaf habit<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <li class="li2"><span class="s1"></span><span class="s2">« &nbsp;</span><b>6.1.2 Dwarfism<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Normal: leaves not overlapped and leaf ratio inferior to 2.5<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;Dwarf type: leaves strongly overlapped and leaf ratio superior to 2.5<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+</ul>
+<p class="p4"><span class="s6"><img src="file:///page22image10584.png" alt="page22image10584.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page22image10856.png" alt="page22image10856.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page22image11136.png" alt="page22image11136.png"></span></p>
+<p class="p5"><br></p>
+<p class="p2"><b>6.2 Pseudostem/suckers</b></p>
+<p class="p3">(See Fig. 4)</p>
+<p class="p6">Leaf III</p>
+<p class="p6">Peduncle</p>
+<p class="p6">Bunch</p>
+<p class="p6">Rachis Male bud</p>
+<p class="p6">Pseudostem</p>
+<p class="p6">Cigar leaf</p>
+<p class="p6">Sucker</p>
+<p class="p3"><b>Fig. 4 Pseudostem/suckers </b>(adapted from Champion, 1963)</p>
+<p class="p7">«</p>
+<p class="p3"><span class="s2">« </span><span class="s7"><b>6.2.2 Pseudostem aspect </b></span>Determined by the circumference at 100 cm</p>
+<p class="p3">1 Slender 2 Normal 3 Robust</p>
+<p class="p3"><span class="s7"><b>6.2.1 Pseudostem height </b>[m] (4.1.1) </span>Recorded from the base of pseudostem to emerging point of the peduncle</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;<span class="s8">≤2<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li3">2 &nbsp;2.1 to 2.9<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;<span class="s8">≥3<span class="Apple-converted-space">&nbsp;</span></span></li>
+</ul>
+<p class="p2"><b>DescripCthoarsrafcotreBrizaantaionna 23</b></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s6"><img src="file:///page23image9680.png" alt="page23image9680.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page23image9960.png" alt="page23image9960.png"></span></p>
+<p class="p6">Inflorescence</p>
+<p class="p2"><b>24</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page24image1392.png" alt="page24image1392.png"></span></p>
+<p class="p7">«</p>
+<p class="p3"><span class="s7"><b>6.2.3 Pseudostem colour </b>(6.1.1) </span>Recorded without removing the external sheaths. The colour of oldest dry sheaths should not be considered. (Chart A)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Green-yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Medium green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Dark green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Green-red<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Red<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">8 &nbsp;Blue<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">9 &nbsp;Chimerical<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">10 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>6.2.4 Pseudostem appearance</b></p>
+<p class="p3">Recorded as in <b>6.2.3</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Dull (waxy)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Shiny (not waxy)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.2.5 Predominant underlying colour of the pseudostem</b></p>
+<p class="p3">Remove the outermost sheath from the pseudostem and look at the exposed surface of the underlying pseudostem. The values 5 (pink-purple), 6 (red-purple) and 7 (purple) must be chosen only if the pigmentation is uniform, and green tinges are not observed. (Chart A)</p>
+<p class="p7">«</p>
+<p class="p3"><span class="s7"><b>6.2.6 Pigmentation of the underlying pseudostem </b>(4.1.3) </span>Record the tinge of pigmentation, even if it is only noticeable in places. (Chart A)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Pink-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Red<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Watery green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Light green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Cream<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Pink-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">8 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Watery<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Milky<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<ul class="ul1">
+  <li class="li2"><b>6.2.8 &nbsp;Wax on leaf sheaths<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Very little or no visible sign of wax<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;Very few wax<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">3 &nbsp;Moderately waxy<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">4 &nbsp;Very waxy<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+  <li class="li2"><b>6.2.9 &nbsp;Number of suckers<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2">(4.1.4)</p>
+<p class="p2">(4.1.2)</p>
+<p class="p3">Cut the external sheath of pseudostem and record the characteristics of the sap. (Chart A)</p>
+<p class="p3">Record the number of suckers from soil level to point of emergence of the last leaf (&gt;30 cm height). Recorded only if no desuckering has taken place</p>
+<p class="p2"><b>6.2.10 Development of suckers</b></p>
+<p class="p3">In relation to the parent plant. Observed on the tallest sucker. Recorded at harvest time</p>
+<p class="p3">1 Taller than parent plant<br>
+2 More than 3/4 of the height of the parent plant<br>
+3 Between 1/4 and 3/4 of the height of the parent plant 4 Inhibited</p>
+<p class="p2"><b>6.2.11 Position of suckers</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Far from parent plant (emerging &gt;50 cm from parent plant)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Close to parent (vertical growth)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Close to parent (growing at an angle)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 25</b></p>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p2"><b>6.2.7 Sap colour</b></p>
+<p class="p2"><b>26</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p2"><b>6.3 Petiole/midrib/leaf</b></p>
+<p class="p3">Recorded on the third, fully unfolded leaf counting down from the top of the plant. (See Fig. 5)</p>
+<p class="p4"><span class="s6"><img src="file:///page26image2752.png" alt="page26image2752.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page26image3024.png" alt="page26image3024.png"></span></p>
+<p class="p6">Petiole</p>
+<p class="p6">Leaf sheath</p>
+<p class="p6">Petiole margins Wings<br>
+Blotches</p>
+<p class="p6">Leaf blade</p>
+<p class="p6">Midrib</p>
+<p class="p6">Petiole canal</p>
+<p class="p3"><b>Fig. 5 Petiole/midrib/leaf </b>(from Champion 1963 (left), De Langhe 1961 (right))</p>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<p class="p2"><b>6.3.1 Blotches at the petiole base</b></p>
+<p class="p3">(See Fig. 5)<br>
+1 Sparse blotching</p>
+<ul class="ul1">
+  <li class="li3">2 &nbsp;Small blotches<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Large blotches<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Extensive pigmentation<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Without pigmentation<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.3.2 Blotches colour</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Brown<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Dark brown<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Brown-black<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Black-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p2"><b>6.3.3 Petiole canal leaf III</b></p>
+<p class="p3">Leaf III is the third leaf counted from the last leaf (leaf I) produced before bunch emergence. Cut the petiole half way between the pseudostem and the leaf blade</p>
+<p class="p3">and examine 1 2 3 4 5</p>
+<p class="p3">the cross section. (See Figs. 4 and 6) Open with margins spreading Wide with erect margins<br>
+Straight with erect margins Margins curved inward</p>
+<p class="p3">Margins overlapping</p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 27</b></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s6"><img src="file:///page27image7424.png" alt="page27image7424.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page27image7704.png" alt="page27image7704.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page27image7984.png" alt="page27image7984.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page27image8264.png" alt="page27image8264.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page27image8544.png" alt="page27image8544.png"></span></p>
+<p class="p6">12345</p>
+<p class="p3"><b>Fig. 6 Petiole canal leaf III</b></p>
+<p class="p3">For descriptors <b>6.3.4 to 6.3.8 </b>observations on the margins and petiole wings should be made where the petiole and pseudostem meet</p>
+<ul class="ul1">
+  <li class="li2"><b>6.3.4 &nbsp;Petiole margins </b>(4.1.5)<span class="Apple-converted-space">&nbsp;</span></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Winged and undulating<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;Winged and not clasping the pseudostem<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">3 &nbsp;Winged and clasping the pseudostem<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">4 &nbsp;Not winged and clasping the pseudostem<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">5 &nbsp;Not winged and not clasping the pseudostem<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+  <li class="li2"><b>6.3.5 &nbsp;Wing type </b><span class="s5"><br>
+</span><span class="s3">1 Dry<span class="Apple-converted-space">&nbsp;</span></span></li>
+</ul>
+<p class="p3">2 Not dry</p>
+<p class="p2"><b>6.3.6 Petiole margin colour</b></p>
+<p class="p3">(Chart A)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Pink-purple to red<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Purple to blue<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>28 Descriptors for Banana</b></p>
+<ul class="ul1">
+  <li class="li2"><b>6.3.7 &nbsp;Edge of petiole margin<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Colourless (without a colour line along)<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;With a colour line along<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+  <li class="li2"><b>6.3.8 &nbsp;Petiole margin width </b>[cm]<span class="Apple-converted-space">&nbsp;</span></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;<span class="s8">≤1</span><span class="s9">cm</span><span class="s8"><span class="Apple-converted-space">&nbsp;</span></span></li>
+    <li class="li3">2 &nbsp;&gt;1cm<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">3 &nbsp;Cannot be defined<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+  <li class="li2"><b>6.3.9 &nbsp;Leaf blade length </b>[cm]<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3">Measured at its maximum point</p>
+<p class="p3">1 <span class="s8">≤170 </span>cm<br>
+2 171 to 220 cm 3 221 to 260 cm 4 <span class="s8">≥261 </span>cm</p>
+<p class="p2"><b>6.3.10 Leaf blade width </b>[cm] <span class="s3">Measured at its maximum point</span></p>
+<p class="p3">1 <span class="s8">≤70</span><span class="s9">cm</span><span class="s8"><br>
+</span>2 71to80cm 3 81to90cm 4 <span class="s8">≥91</span><span class="s9">cm</span></p>
+<p class="p8"><b>6.3.10.1 Leaf ratio</b></p>
+<p class="p3">3 <span class="s8">≤2<br>
+</span>5 2.4 to 2.6 7 <span class="s8">≥3</span></p>
+<p class="p3"><span class="s7"><b>6.3.11 Petiole length </b>[cm]<br>
+</span>Recorded from the pseudostem to the lamina</p>
+<p class="p3">1 <span class="s8">≤50</span><span class="s9">cm</span><span class="s8"><br>
+</span>2 51to70cm 3 <span class="s8">≥71</span><span class="s9">cm</span></p>
+<p class="p2"><b>6.3.12 Colour of leaf upper surface</b></p>
+<p class="p3">(Chart A)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Green-yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Medium green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Dark green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Dark green with red-purple (presence of large blotches of <span class="s5"><br>
+</span>red-purple)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Blue<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p4"><span class="s6"><img src="file:///page28image13560.png" alt="page28image13560.png"></span></p>
+<p class="p5"><br></p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 29</b></p>
+<p class="p5"><br></p>
+<ul class="ul1">
+  <li class="li2"><b>6.3.13 &nbsp;Appearance of leaf upper surface </b><span class="s5"><br>
+</span><span class="s3">1 Dull 2 Shiny<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li2"><b>6.3.14 &nbsp;Colour of leaf lower surface<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p3">(Wax removed). (Chart A)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Green-yellow 5 Blue<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Medium green 6 Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Green 7 Other (specify in<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Dark green descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<ul class="ul1">
+  <li class="li2"><b>6.3.15 &nbsp;Appearance of leaf lower surface </b><span class="s5"><br>
+</span><span class="s3">1 Dull 2 Shiny<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li2"><b>6.3.16 &nbsp;Wax on leaves<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p3">Recorded on the lower surface<br>
+1 Very little or no visible sign of wax</p>
+<p class="p3">2 Few wax<br>
+3 Moderately waxy 4 Very waxy</p>
+<ul class="ul1">
+  <li class="li2"><b>6.3.17 &nbsp;Insertion point of leaf blades on petiole </b><span class="s5"><br>
+</span><span class="s3">1 Symmetric 2 Asymmetric<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li2"><b>6.3.18 &nbsp;Shape of leaf blade base<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p3">(See Fig. 7)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Both sides rounded<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;One side rounded, one pointed<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Both sides pointed<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p6">123</p>
+<p class="p3"><b>Fig. 7 Shape of leaf blade base</b></p>
+<p class="p2">(4.1.6)</p>
+<p class="p4"><span class="s6"><img src="file:///page29image12344.png" alt="page29image12344.png"></span></p>
+<p class="p2"><b>30</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page30image1400.png" alt="page30image1400.png"></span></p>
+<p class="p7">«</p>
+<ul class="ul1">
+  <li class="li3">2 &nbsp;Few stripes<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Very corrugated<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.3.20 Colour of midrib dorsal surface</b></p>
+<p class="p3">If pigmentation is seen, options are 4, 5 or 6. (Chart A)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Light green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Pink-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Purple to blue<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>6.3.21 Colour of midrib ventral surface</b></p>
+<p class="p3">If pigmentation is seen, options are 4, 5 or 6. (Chart A) 1 Yellow</p>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<ul class="ul1">
+  <li class="li3">2 &nbsp;Light green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Pink-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Purple to blue<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>6.3.22 Colour of cigar leaf dorsal surface</b></p>
+<p class="p3">Look at the visible face (future lower face) of the cigar leaf before it is unfurled and before the plant flowers. (Chart A)</p>
+<p class="p2"><b>6.3.19 Leaf corrugation</b></p>
+<p class="p3">Presence of ridges perpendicular to the secondary ribs on the leaf upper surface 1 Even, smooth</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>6.3.23 Blotches on leaves of water suckers</b></p>
+<p class="p3">Observed on young, non inhibited water suckers (if the lamina is sword shaped, it is not a water sucker)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Without blotches<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Little or narrow blotches<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Large purple blotches<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p5"><br></p>
+<p class="p2"><span class="s2">« </span><b>6.4.5</b></p>
+<p class="p2">(4.2.2)</p>
+<p class="p3"><span class="s7"><b>6.4.1 Peduncle length </b>[cm]<br>
+</span>Measured from the leaf crown to the first hand of fruit</p>
+<p class="p3">1 <span class="s8">≤30</span><span class="s9">cm</span><span class="s8"><br>
+</span>2 31-60cm 3 <span class="s8">≥61</span><span class="s9">cm</span></p>
+<p class="p2"><b>6.4.2 Empty nodes on peduncle</b></p>
+<p class="p3">Record the number of empty nodes between the last bract-leaf and first hand of fruit</p>
+<p class="p2"><b>6.4.3 Peduncle width </b>[cm] <span class="s3">Recorded at mid-length</span></p>
+<p class="p3">1 <span class="s8">≤6</span><span class="s9">cm</span><span class="s8"><br>
+</span>2 7-12cm 3 <span class="s8">≥13</span><span class="s9">cm</span></p>
+<p class="p2"><b>6.4.4 Peduncle colour</b></p>
+<p class="p3">Descriptor state 4 (red/or pink-purple) is green homogeneously tinged with red (purple green appearance). When pigmentation is scattered, use state 5. (Chart A)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Light green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Dark green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Red or pink/purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;With purple-brown to blue blotches<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>Peduncle hairiness</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Hairless<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Slightly hairy<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Very hairy, short hairs (similar to velvet touch)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Very hairy, long hairs (&gt;2 mm)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3"><span class="s2">« </span><span class="s7"><b>6.4.6<br>
+</b></span>(Position of the fruit-bearing part). Angle from vertical to the general axis of the bunch</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Hanging vertically<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Slightly angled<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Hanging at angle 45°<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Horizontal<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Erect<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>Bunch position</b></p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 31</b></p>
+<p class="p5"><br></p>
+<p class="p2"><b>6.4 Inflorescence / male bud</b></p>
+<p class="p7">«</p>
+<p class="p2"><b>32 Descriptors for Banana</b></p>
+<p class="p2"><b>6.4.7 Bunch shape</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Cylindrical<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Truncated cone shape<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Asymmetric - Bunch axis is nearly straight<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;With a curve in the bunch axis<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Spiral (all fruit is attached to a unique crown coiled around the<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p4"><span class="s6"><img src="file:///page32image3896.png" alt="page32image3896.png"></span></p>
+<p class="p3">stalk)</p>
+<p class="p2"><b>6.4.8 Bunch appearance</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Lax<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Compact<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Very compact<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3">(one can easily place one’s hand between the hands of fruit)<br>
+(one can place one’s finger, but not one’s hand, between the hands of fruit)</p>
+<p class="p3">(one cannot place one’s finger between the hands of fruit)</p>
+<p class="p3"><span class="s7"><b>6.4.9 Flowers that form the fruit </b>(4.2.3) </span>Record at flowering if the flowers of the first hands bear apparently functional stamens</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Female (absence of pollen sacs or pollens)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Hermaphrodite (presence of pollen sacs and pollens)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3"><span class="s2">« </span><span class="s7"><b>6.4.10 Fruits<br>
+</b></span>Positioning of fruits on the crown</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Uniseriate<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Biseriate<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Biseriate and fused<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3">For the following descriptors, observe only that part of the rachis between the last hand of fruit and the male bud</p>
+<p class="p7">« «</p>
+<ul class="ul1">
+  <li class="li2"><b>6.4.11 &nbsp;Rachis type<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Truncated, no bract scar below the last hand of fruit<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;Present and male bud may be degenerated or persistent<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+  <li class="li2"><b>6.4.12 &nbsp;Rachis position<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p3">(See Fig. 8)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Falling vertically<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;At an angle<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;With a curve<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Horizontal<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Erect<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p5"><br></p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 33</b></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s6"><img src="file:///page33image1600.png" alt="page33image1600.png"></span></p>
+<p class="p7">«</p>
+<p class="p6">12345</p>
+<p class="p3"><b>Fig. 8 Rachis position </b>(adapted from De Langhe 1961)</p>
+<p class="p2"><b>6.4.13 Rachis appearance</b></p>
+<p class="p7">«</p>
+<p class="p2"><b>6.4.14 Male bud type</b></p>
+<p class="p3">Recorded at maturity</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Normal (present)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Degenerating before maturity (like false-horn ‘Plantain’)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Like true-horn ‘Plantain’ (absent)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Bare<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Neutral flowers (one to few hands only, stalk is bare below)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Male flowers/bracts above the male bud (but the stalk is bare above <span class="s5"><br>
+</span>flowers/bracts)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Neutral/male flowers and presence of withered bracts (on the <span class="s5"><br>
+</span>whole stalk)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Neutral/male flowers on the whole stalk without persistent bracts <span class="s5"><br>
+</span>(e.g. AA var. ‘Tuu Gia’)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Small bunch from neutral/hermaphrodite flowers just above the <span class="s5"><br>
+</span>male bud (e.g. ABB var. ‘Monthan’)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Other (specify in descriptor <b>6.8, Notes)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>34</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page34image1424.png" alt="page34image1424.png"></span></p>
+<p class="p7">«</p>
+<p class="p6">12345</p>
+<p class="p3"><b>Fig. 9 Male bud shape</b></p>
+<p class="p3"><span class="s7"><b>6.4.16 Male bud size </b>[cm]<br>
+</span>Length and maximum diameter of male bud at harvest</p>
+<p class="p3">1 <span class="s8">≤20</span><span class="s9">cm</span><span class="s8"><br>
+</span>2 21to30cm 3 <span class="s8">≥31</span><span class="s9">cm</span></p>
+<p class="p2"><b>6.5 Bract</b></p>
+<p class="p3">Descriptors <b>6.5.1 to 6.5.14 </b>refer to the first external bract that still clings to the male bud</p>
+<p class="p2"><b>6.4.15 Male bud shape</b></p>
+<p class="p3">Note the general shape of the male bud at harvest. (See Fig. 9)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Like a top 4 Ovoid<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Lanceolate 5 Rounded<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Intermediate<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p4"><span class="s6"><img src="file:///page34image7984.png" alt="page34image7984.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page34image8264.png" alt="page34image8264.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page34image8544.png" alt="page34image8544.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page34image8824.png" alt="page34image8824.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page34image9104.png" alt="page34image9104.png"></span></p>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p3"><span class="s7"><b>6.5.2 Bract apex shape </b>(4.2.12) </span>Flatten the apex of the bract to observe its shape. (See Fig. 11)</p>
+<p class="p6">123</p>
+<p class="p3"><b>Fig. 10 Bract base shape</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Pointed<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Slightly pointed<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Intermediate<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Obtuse<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Obtuse and split<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 35</b></p>
+<p class="p5"><br></p>
+<p class="p2"><b>6.5.1 Bract base shape</b></p>
+<p class="p3">(See Fig. 10)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Small shoulder<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Medium<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Large shoulder<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p4"><span class="s6"><img src="file:///page35image7736.png" alt="page35image7736.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page35image8016.png" alt="page35image8016.png"></span></p>
+<p class="p7">«</p>
+<p class="p6">12345</p>
+<p class="p3"><b>Fig. 11 Bract apex shape</b></p>
+<p class="p2"><b>6.5.3 Bract imbrication</b></p>
+<p class="p3">Note alignment of bracts at the apex of the male bud</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Old bracts overlap at apex of bud (like <i>Musa acuminata </i>subsp. <i>malaccensis)<span class="Apple-converted-space">&nbsp;</span></i></li>
+  <li class="li3">2 &nbsp;Young bracts slightly overlap<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Young bracts greatly overlap (like <i>Musa acuminata </i>subsp. <i>burmanicca)<span class="Apple-converted-space">&nbsp;</span></i></li>
+</ul>
+<p class="p2"><b>36</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page36image1448.png" alt="page36image1448.png"></span></p>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<p class="p2"><b>6.5.4 Colour of the bract external face </b>(4.2.11) <span class="s3">(Chart A)</span></p>
+<p class="p7">«</p>
+<p class="p3"><span class="s7"><b>6.5.8 Bract scars on rachis </b>(4.2.7) </span>Recorded on scars left after fall of bracts and flowers</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Very prominent<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Not prominent<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Red<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Purple-brown<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3">6 Purple<br>
+7 Blue<br>
+8 Pink-purple<br>
+9 Orange-red<br>
+10 Other (specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p2"><b>6.5.5 Colour of the bract internal face </b>(4.2.13) <span class="s3">(Chart A)</span></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Whitish<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Yellow or green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Orange red<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Red<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.5.6 Colour on the bract apex</b></p>
+<p class="p3">5 Purple<br>
+6 Purple brown<br>
+7 Pink-purple<br>
+8 Other (specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p3">Recorded on the external face of the bract</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Tinted with yellow (discoloured)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Not tinted with yellow (colour is uniform until apex)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.5.7 Colour stripes on bract</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Without discoloured lines (not ridges) on the external face<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;With discoloured lines or stripes on the external face<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3"><span class="s2">« </span><span class="s7"><b>6.5.9<br>
+</b></span>Observed on the inside of the bract</p>
+<p class="p2"><b>Fading of colour on bract base</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Colour discontinuing towards the base (loss of pigmentation at the base)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Colour homogenous (pigmentation is uniform and continues until the base)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.5.10 Male bract shape</b></p>
+<p class="p3">(See Fig. 12)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;x/y &lt; 0.28 (Lanceolate)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;0.28 &lt; x/y &lt;0.30<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;x/y &gt; 0.30 (Ovate)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p5"><br></p>
+<p class="p6">x</p>
+<p class="p6">y</p>
+<p class="p3"><b>Fig. 12 Male bract shape </b>(from Simmonds and Shepherd 1955)</p>
+<p class="p2"><b>6.5.11 Male bract lifting</b></p>
+<p class="p3">Number of raised bracts present on the male bud</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Not lifting from male bud (bracts are persistent)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Lifting one at a time<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Lifting two or more at a time<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<p class="p2"><b>6.5.12 Bract behaviour before falling</b></p>
+<p class="p3">(See Fig. 13)<br>
+1 Revolute (rolling)</p>
+<p class="p2">(4.2.10)</p>
+<p class="p3">2 Not revolute (not rolling)</p>
+<p class="p6">12</p>
+<p class="p3"><b>Fig. 13 Bract behaviour before falling</b></p>
+<p class="p2"><b>6.5.13 Wax on the bract</b></p>
+<p class="p3">Recorded on the external surface<br>
+1 Very little or no visible sign of wax</p>
+<p class="p3">2 Very few wax<br>
+3 Moderately waxy 4 Very waxy</p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 37</b></p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s6"><img src="file:///page37image10920.png" alt="page37image10920.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page37image11200.png" alt="page37image11200.png"></span></p>
+<p class="p2"><b>38</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p2"><b>6.5.14 Presence of grooves on the bract</b></p>
+<p class="p3">Observed on the external surface</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Few grooves or not grooved (the bract is completely, or almost <span class="s5"><br>
+</span>completely, smooth)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Moderate grooving (parallel ridges are distinguishable)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Strongly grooved (deep parallel furrows on the surface of bract)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.6 Male flower</b></p>
+<p class="p3">(See Fig. 14). Descriptors <b>6.6.1 to 6.6.25 </b>refer to the flowers at the axil of the first external bract unlifted. At least 10 flowers should be observed</p>
+<p class="p4"><span class="s6"><img src="file:///page38image6192.png" alt="page38image6192.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page38image6464.png" alt="page38image6464.png"></span></p>
+<p class="p6">Bract scar</p>
+<p class="p6">Bract</p>
+<p class="p6">Male flower</p>
+<p class="p6">Stigma</p>
+<p class="p6">Lobes of compound tepal</p>
+<p class="p6">Style</p>
+<p class="p6">Apex</p>
+<p class="p6">Compound tepal</p>
+<p class="p6">Free tepal</p>
+<p class="p6">Ovary</p>
+<p class="p3"><b>Fig. 14 Male bud and flower </b>(adapted from Champion 1967)</p>
+<p class="p6">Anthers</p>
+<p class="p6">Filament</p>
+<p class="p4"><span class="s6"><img src="file:///page38image11304.png" alt="page38image11304.png"></span></p>
+<p class="p2"><b>6.6.1 Male flower behaviour</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Falling before the bract<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Falling with the bract<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Falling after the bract<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Neutral/male flowers persistent<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p3">1 Rectangular 2 Oval<br>
+3 Rounded<br>
+4 Fan-shaped</p>
+<p class="p2"><b>6.6.8 Free tepal appearance</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Simple folding under apex<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;More or less smooth<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Several folding under apex (corrugated)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<ul class="ul1">
+  <li class="li3">2 &nbsp;Cream<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Orange<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Pink/pink-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>6.6.3 Compound tepal pigmentation</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Very few or no visible sign of pigmentation<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Rust-coloured spots<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Presence of pink<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.6.4 Lobe colour of compound tepal</b></p>
+<p class="p3">(Chart B)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Cream<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Orange<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Green<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<ul class="ul1">
+  <li class="li2"><b>6.6.5 &nbsp;Lobe development of compound tepal<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Little or not visible sign of development<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;Developed<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">3 &nbsp;Very developed<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+  <li class="li2"><b>6.6.6 &nbsp;Free tepal colour<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <ul class="ul1">
+    <li class="li3">1 &nbsp;Translucent white<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">2 &nbsp;Opaque white<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">3 &nbsp;Tinted with yellow<span class="Apple-converted-space">&nbsp;</span></li>
+    <li class="li3">4 &nbsp;Tinted with pink<span class="Apple-converted-space">&nbsp;</span></li>
+  </ul>
+  <li class="li2"><b>6.6.7 &nbsp;Free tepal shape<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 39</b></p>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<p class="p2"><b>6.6.2 Compound tepal basic colour</b></p>
+<p class="p3">Without considering lobe colour. (Chart B) 1 White</p>
+<p class="p2"><b>40 Descriptors for Banana</b></p>
+<p class="p2"><b>6.6.9 Free tepal apex development</b></p>
+<p class="p3">(See Fig. 15)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Little or no visible sign of development<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Developed<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Very developed <span class="s5"><br>
+</span><span class="s4">123 </span><span class="s5"><br>
+</span><b>Fig. 15 Free tepal apex development<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<ul class="ul1">
+  <li class="li3"><span class="s7"><b>6.6.10 &nbsp;Free tepal apex shape </b></span><span class="s5"><br>
+</span>1 Thread-like 2 Triangular 3 Obtuse<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li2"><b>6.6.11 &nbsp;Anther exsertion<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p3">In relation to the base of the lobes on the compound tepal</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Exserted<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Same level<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Inserted<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.6.12 Filament colour</b></p>
+<p class="p3">(Chart B)<br>
+1 White</p>
+<p class="p3">2 Cream 3 Yellow</p>
+<p class="p2"><b>6.6.13 Anther colour</b></p>
+<p class="p3">Observed on the face opposite to the dehiscence split of the anther (dorsal face). (Chart B)</p>
+<p class="p4"><span class="s6"><img src="file:///page40image9352.png" alt="page40image9352.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page40image9624.png" alt="page40image9624.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page40image9904.png" alt="page40image9904.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page40image10184.png" alt="page40image10184.png"></span></p>
+<p class="p3">1 White 2 Cream 3 Yellow 4 Grey</p>
+<p class="p3">5 Brown/rusty brown<br>
+6 Pink/pink-purple<br>
+7 Black (anthers aborted)<br>
+8 Other (specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p3"><span class="s7"><b>6.6.15 Pollen vitality </b>[%]<br>
+</span>Percentage of deformed and/or aborted grains in relation to normal grains. Use Alexander’s pollen viability assessment method (See references)</p>
+<p class="p2"><b>6.6.16 Style basic colour</b></p>
+<p class="p3">Do not refer to the minute blotches which can be present on the style (Descriptor <b>6.6.17). </b>(Chart B)</p>
+<p class="p7">«</p>
+<ul class="ul1">
+  <li class="li3">2 &nbsp;Same level<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Inserted<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.6.19 Style shape</b></p>
+<p class="p3">(See Fig. 16)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Straight 4 Curved twice<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Curved under stigma 5 Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+  <li class="li3">3 &nbsp;Curved at the base<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p6">1234</p>
+<p class="p3"><b>Fig. 16 Style shape</b></p>
+<p class="p3">1 White 2 Cream</p>
+<p class="p2"><b>6.6.17 Pigmentation on style</b></p>
+<p class="p3">1 Without pigmentation 2 Purple</p>
+<p class="p2"><b>6.6.18 Style exsertion</b></p>
+<p class="p3">3 Red-purple<br>
+4 Other (specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p3">In relation to the base of the lobes on the compound tepal 1 Exserted</p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 41</b></p>
+<p class="p5"><br></p>
+<p class="p2"><b>6.6.14 Pollen sac colour</b></p>
+<p class="p3">Recorded at the line where the anther splits to release pollen. (Chart B)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;White 5 Pink/pink-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Cream 6 Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Yellow 7<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Brown/rusty brown<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3">Other (specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p4"><span class="s6"><img src="file:///page41image16224.png" alt="page41image16224.png"></span></p>
+<p class="p2"><b>42</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page42image1456.png" alt="page42image1456.png"></span></p>
+<p class="p7">«</p>
+<p class="p2"><b>6.6.20 Stigma colour</b></p>
+<p class="p3">(Chart B)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Cream<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Pink/pink-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Bright yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Orange<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<p class="p2"><b>6.6.22 Ovary basic colour</b></p>
+<p class="p3">(Chart B)</p>
+<p class="p2"><b>6.6.21 Ovary shape</b></p>
+<p class="p3">(See Fig. 17)<br>
+1 Straight</p>
+<p class="p3">(Chart B)</p>
+<p class="p3">2 Arched</p>
+<p class="p4"><span class="s6"><img src="file:///page42image8416.png" alt="page42image8416.png"></span></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;White<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Cream<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.6.23 Ovary pigmentation</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;White<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Cream<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3">4 Pink/pink-purple<br>
+5 Red-purple<br>
+6 Other (specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p6">12</p>
+<p class="p3"><b>Fig. 17 Ovary shape</b></p>
+<p class="p3">4 Green<br>
+5 Other (specify in descriptor</p>
+<p class="p3"><b>Notes, 6.8)</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Very few or no visible sign of pigmentation<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;With red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.6.24 Dominant colour of male flower</b></p>
+<p class="p5"><br></p>
+<p class="p3">Record number of flowers per cluster with an abnormal number of stamens, fusion of free and compound tepal, etc.</p>
+<p class="p3"><span class="s7"><b>6.6.26 Arrangement of ovules </b>(6.2.1) </span>Observed soon after flowering and before the fruit fills. Observe a cross-section of a fruit. (See Fig. 18)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Two rowed<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Four-rowed (more or less) <span class="s5"><br>
+</span><span class="s4">12<span class="Apple-converted-space">&nbsp;</span></span></li>
+</ul>
+<p class="p3"><b>Fig. 18 Arrangement of ovules </b>(adapted from Simmonds and Shepherd 1955)</p>
+<p class="p2"><b>6.7 Fruit</b></p>
+<p class="p3">For the following descriptors, records should be made on the inner fruit in the middle of the mid-hand of the bunch, at harvest time (first fruit ripening on bunch)</p>
+<p class="p2"><b>6.7.1 Fruit position</b></p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 43</b></p>
+<p class="p5"><br></p>
+<p class="p2"><b>6.6.25 Irregular flowers</b></p>
+<p class="p4"><span class="s6"><img src="file:///page43image8536.png" alt="page43image8536.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page43image8816.png" alt="page43image8816.png"></span></p>
+<p class="p7">«</p>
+<p class="p3"><span class="s7"><b>6.7.2 Number of fruits </b>(4.2.5) </span>Observed on the mid-hand of the bunch</p>
+<p class="p3">1 <span class="s8">≤12<br>
+</span>2 13-16 3 <span class="s8">≥17</span></p>
+<p class="p3">Recorded only 1</p>
+<p class="p3">2 3 4 5</p>
+<p class="p3">on fruits arranged symmetrically around the stalk Curved towards stalk<br>
+Parallel to the stalk<br>
+Curved upward (obliquely, at a 45°angle upward) Perpendicular to the stalk</p>
+<p class="p3">Pendant</p>
+<p class="p2"><b>44</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page44image1416.png" alt="page44image1416.png"></span></p>
+<p class="p7">«</p>
+<p class="p7">«</p>
+<p class="p2"><b>6.7.3 Fruit length </b>[cm]</p>
+<p class="p3">Measured as 1 2 3 4 5</p>
+<p class="p3">the internal arc of the fruit, without pedicel <span class="s8">≤15</span><span class="s9">cm</span></p>
+<p class="p3">16- 20 cm 21- 25 cm 26- 30 cm <span class="s8">≥31</span><span class="s9">cm</span></p>
+<p class="p2"><b>6.7.4 Fruit shape (longitudinal curvature) </b>(4.2.7) <span class="s3">(See Fig. 19)</span></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Straight (or slightly curved)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Straight in the distal part<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Curved (sharp curve)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Curved in ‘S’ shape (double curvature)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p6">1234</p>
+<p class="p4"><span class="s6"><img src="file:///page44image9144.png" alt="page44image9144.png"></span></p>
+<p class="p3"><b>Fig. 19 Fruit shape (longitudinal curvature) </b>(adapted from Dodds and Simmonds 1948)</p>
+<p class="p7">«</p>
+<p class="p3"><span class="s7"><b>6.7.5 Transverse section of fruit </b>(6.2.4) </span>Observed on mature fruit (‘ready to eat’ - ripe but not over-ripe, full yellow stage). (See Fig. 20)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Pronounced ridges<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Slightly ridged<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Rounded<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p5"><br></p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 45</b></p>
+<p class="p6">123</p>
+<p class="p3"><b>Fig. 20 Transverse section of fruit </b>(adapted from Dodds and Simmonds 1948)</p>
+<p class="p7">«</p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s6"><img src="file:///page45image2808.png" alt="page45image2808.png"></span></p>
+<p class="p3"><span class="s7"><b>6.7.6 Fruit apex </b>(4.2.8) </span>Observed at the distal end of the fruit. (See Fig. 21)</p>
+<p class="p3">1 Pointed<br>
+2 Lengthily pointed 3 Blunt-tipped<br>
+4 Bottle-necked<br>
+5 Rounded</p>
+<p class="p6">12345</p>
+<p class="p3"><b>Fig. 21 Fruit apex </b>(adapted from Champion 1967)</p>
+<p class="p2"><b>6.7.7 Remains of flower relicts at fruit apex</b></p>
+<p class="p3">Observed at the distal end of the fruit. (See Fig. 22)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Without any floral relicts<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Persistent style<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Base of the style prominent <span class="s5"><br>
+</span><span class="s4">123<span class="Apple-converted-space">&nbsp;</span></span></li>
+</ul>
+<p class="p3"><b>Fig. 22 Remains of flower relicts at fruit apex</b></p>
+<p class="p4"><span class="s6"><img src="file:///page45image9296.png" alt="page45image9296.png"></span></p>
+<p class="p4"><span class="s6"><img src="file:///page45image9576.png" alt="page45image9576.png"></span></p>
+<p class="p2"><b>46</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page46image1400.png" alt="page46image1400.png"></span></p>
+<p class="p7">«</p>
+<p class="p2"><b>6.7.13 Mature fruit peel colour</b></p>
+<p class="p3">Recorded at fruit maturity (ripe, but not over-ripe; full yellow stage). (Chart B)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Bright yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Orange<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Grey spots<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Brown/rusty-brown<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Orange red, red or pink/pink purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Red-purple<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">8 &nbsp;Black<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">9 &nbsp;Other (specify in the descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<ul class="ul1">
+  <li class="li2"><b>6.7.8 &nbsp;Fruit pedicel length </b>[mm] <span class="s3">1 </span><span class="s8">≤10</span><span class="s9">mm</span><span class="s8"> </span><span class="s5"><br>
+</span><span class="s3">2 11to20mm 3 </span><span class="s8">≥21</span><span class="s9">mm</span><span class="s8"><span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li2"><b>6.7.9 &nbsp;Fruit pedicel width </b>[mm] <span class="s3">1 </span><span class="s8">&lt;5</span><span class="s9">mm</span><span class="s8"> </span><span class="s5"><br>
+</span><span class="s3">2 5to10mm 3 </span><span class="s8">&gt;10</span><span class="s9">mm</span><span class="s8"><span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li2"><b>6.7.10 &nbsp;Pedicel surface </b><span class="s5"><br>
+</span><span class="s3">1 Hairless 2 Hairy<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li2"><b>6.7.11 &nbsp;Fusion of pedicels<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p3">(Before joining the crown)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Very partially or no visible sign of fusion<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Partially fused<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Totally fused<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.7.12 Immature fruit peel colour </b>(6.2.5)</p>
+<p class="p3">Recorded on 1 2 3 4 5 6 7 8 9</p>
+<p class="p3">the youngest hand of the bunch, before maturity. (Chart B) Yellow</p>
+<p class="p3">10</p>
+<p class="p3">Light green<br>
+Green<br>
+Green and pink, red or purple<br>
+Silvery<br>
+Dark green<br>
+Brown/rusty brown<br>
+Pink, red or purple<br>
+Black<br>
+Other (e.g. bluish, specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p5"><br></p>
+<p class="p7">«</p>
+<p class="p2"><b>6.7.19 Pulp colour at maturity</b></p>
+<p class="p3">(Chart B). (Ripe, but not over-ripe; full yellow stage)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;White<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Cream<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Ivory<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Yellow<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Orange<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Beige-pink<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">7 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>6.7.20 Fruits fall from hands</b></p>
+<p class="p3">Observed at fruit maturity 1 Persistent</p>
+<p class="p3">2 Deciduous</p>
+<p class="p2"><b>DescripCthoarrsafcoter rBizaantaionna 47</b></p>
+<p class="p3"><span class="s7"><b>6.7.14 Fruit peel thickness </b>[mm]<br>
+</span>Recorded at fruit maturity (‘ready to eat’ ripe, but not over-ripe; full yellow stage)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Two or less<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Three or more<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.7.15 Adherence of the fruit peel</b></p>
+<p class="p3">Recorded at fruit maturity (ripe, but not over-ripe; full yellow stage)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Fruit peels easily<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Fruit does not peel easily<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>6.7.16 Cracks in fruit peel</b></p>
+<p class="p3">Recorded at fruit maturity if the peel splits without mechanical damage 1 Without cracks</p>
+<p class="p3">2 Cracked</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="s2">« </span><b>6.7.17<br>
+6.7.18 Pulp colour before maturity</b></p>
+<p class="p3">Recorded on 1 2 3 4 5 6 7</p>
+<p class="p3">youngest hand of the bunch. (Chart B) White</p>
+<p class="p3">Cream<br>
+Ivory<br>
+Yellow<br>
+Orange<br>
+Beige-pink<br>
+Other (specify in descriptor <b>Notes, 6.8)</b></p>
+<p class="p2"><b>Pulp in fruit</b></p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Without pulp<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;With pulp<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p2"><b>48</b></p>
+<p class="p2"><b>Descriptors for Banana</b></p>
+<p class="p4"><span class="s6"><img src="file:///page48image1408.png" alt="page48image1408.png"></span></p>
+<p class="p7">«</p>
+<ul class="ul1">
+  <li class="li3">2 &nbsp;Mild, slightly tasty or tasteless<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Sweet (like Cavendish)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Sugary (like ‘Pisang Mas’)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">5 &nbsp;Sweet and acidic (apple like)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">6 &nbsp;Other (specify in descriptor <b>Notes, 6.8)<span class="Apple-converted-space">&nbsp;</span></b></li>
+</ul>
+<p class="p2"><b>6.7.23 Presence of seed with source of pollen</b></p>
+<p class="p3">Record the number of seeds only if there exists in the vicinity of the plant a population of wild relatives, or male fertile hybrids (pollen sources), or if the female flowers are artificially pollinated</p>
+<p class="p3">1 &lt;5<br>
+2 5-20 3 &gt;20</p>
+<p class="p2"><b>6.7.24 Seed surface</b></p>
+<p class="p7">«</p>
+<p class="p2"><b>6.8 Notes</b></p>
+<ul class="ul1">
+  <li class="li2"><b>6.7.21 &nbsp;Flesh texture </b><span class="s5"><br>
+</span><span class="s3">1 Firm 2 Soft<span class="Apple-converted-space">&nbsp;</span></span></li>
+  <li class="li2"><b>6.7.22 &nbsp;Predominant taste </b>(4.2.6)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+<p class="p3">1 Astringent (like cooking banana)</p>
+<p class="p3">1 Smooth 2 Wrinkled</p>
+<p class="p2"><b>6.7.25 Seed shape </b>(4.3.1)</p>
+<ul class="ul1">
+  <li class="li3">1 &nbsp;Flat<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">2 &nbsp;Angular (more or less pyramidal)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">3 &nbsp;Globular (spherical)<span class="Apple-converted-space">&nbsp;</span></li>
+  <li class="li3">4 &nbsp;Rounded (but not completely spherical)<span class="Apple-converted-space">&nbsp;</span></li>
+</ul>
+
+
+</body></html>
